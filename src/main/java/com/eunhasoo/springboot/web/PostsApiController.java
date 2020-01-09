@@ -20,7 +20,7 @@ public class PostsApiController {
     }
 
     // 수정 기능을 수행하는 메소드
-    @PutMapping("api/v1/posts/{id}")
+    @PutMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
     }
@@ -31,4 +31,10 @@ public class PostsApiController {
         return postsService.findById(id);
     }
 
+    // 삭제 기능을 수행하는 메소드
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+        postsService.delete(id);
+        return id;
+    }
 }

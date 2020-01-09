@@ -65,7 +65,7 @@ public class PostsApiControllerTest {
 
     @Test
     public void posts_edit() throws Exception {
-        // give
+        // given
         Posts savedPosts = postsRepository.save(Posts.builder()
                                                     .title("title")
                                                     .content("content")

@@ -28,14 +28,14 @@ public class PostsService {
     // 게시글 수정
     @Transactional
     public Long update(Long id, PostsUpdateRequestDto requestDto) {
-        Posts post = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
+        Posts post = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
         post.update(requestDto.getTitle(), requestDto.getContent()); // 비즈니스 로직 처리는 domain에서 구현하도록 한다.
         return id;
     }
 
     // 게시글 하나 조회
     public PostsResponseDto findById(Long id) {
-        Posts entity = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id="+ id));
+        Posts entity = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+ id));
         return new PostsResponseDto(entity);
     }
 

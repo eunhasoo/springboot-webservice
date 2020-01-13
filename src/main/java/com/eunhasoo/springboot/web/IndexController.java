@@ -1,5 +1,7 @@
 package com.eunhasoo.springboot.web;
 
+import com.eunhasoo.springboot.config.auth.LoginUser;
+import com.eunhasoo.springboot.config.auth.dto.SessionUser;
 import com.eunhasoo.springboot.service.posts.PostsService;
 import com.eunhasoo.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -8,16 +10,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpSession;
+
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
 
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        // 머스테치 스타터가 view의 prefix와 suffix를 자동으로 지정한다.
+        if (user != null)
+            model.addAttribute("userName", user.getName());
         return "index";
     }
 

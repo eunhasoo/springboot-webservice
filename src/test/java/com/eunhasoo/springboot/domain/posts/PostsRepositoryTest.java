@@ -1,6 +1,5 @@
 package com.eunhasoo.springboot.domain.posts;
 
-import org.assertj.core.api.LocalDateTimeAssert;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

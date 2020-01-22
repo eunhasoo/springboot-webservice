@@ -1,6 +1,6 @@
 package com.eunhasoo.springboot.web;
 
-import com.eunhasoo.springboot.service.posts.PostsService;
+import com.eunhasoo.springboot.service.PostsService;
 import com.eunhasoo.springboot.web.dto.PostsResponseDto;
 import com.eunhasoo.springboot.web.dto.PostsSaveRequestDto;
 import com.eunhasoo.springboot.web.dto.PostsUpdateRequestDto;

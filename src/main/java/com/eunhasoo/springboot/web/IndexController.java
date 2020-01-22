@@ -2,7 +2,7 @@ package com.eunhasoo.springboot.web;
 
 import com.eunhasoo.springboot.config.auth.LoginUser;
 import com.eunhasoo.springboot.config.auth.dto.SessionUser;
-import com.eunhasoo.springboot.service.posts.PostsService;
+import com.eunhasoo.springboot.service.PostsService;
 import com.eunhasoo.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

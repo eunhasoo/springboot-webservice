@@ -1,4 +1,4 @@
-package com.eunhasoo.springboot.service.posts;
+package com.eunhasoo.springboot.service;
 
 import com.eunhasoo.springboot.domain.posts.Posts;
 import com.eunhasoo.springboot.domain.posts.PostsRepository;

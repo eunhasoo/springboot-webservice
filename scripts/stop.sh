@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 ABSPATH=$(readlink -f $0)
-# 현재 파일이 속한 경로 탐색
 ABSDIR=$(dirname $ABSPATH)
-# profile.sh의 함수를 사용하도록 import
 source ${ABSDIR}/profile.sh
 
 IDLE_PORT=$(find_idle_port)
@@ -13,7 +11,7 @@ IDLE_PID=$(lsof -ti tcp:${IDLE_PORT})
 
 if [ -z ${IDLE_PID} ]
 then
-  echo "> 현재 구동중인 애플리케이션이 없으므로 종료하지 않습니다"
+  echo "> 현재 구동중인 애플리케이션이 없으므로 종료하지 않습니다."
 else
   echo "> kill -15 $IDLE_PID"
   kill -15 ${IDLE_PID}

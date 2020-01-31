@@ -1,3 +1,6 @@
+#!/user/bin/env bash
+
+ABSPATH = $(readlink -f $0)
 # 현재 파일이 속한 경로 탐색
 ABSDIR=$(dirname $ABSPATH)
 # profile.sh의 함수를 사용하도록 import

@@ -1,4 +1,4 @@
-#!/user/bin/env bash
+#!/usr/bin/env bash
 
 ABSPATH = $(readlink -f $0)
 # 현재 파일이 속한 경로 탐색
